@@ -124,15 +124,6 @@ namespace MicroSisPlani
             }
         }
 
-        private void btn_Asis_Manual_Click(object sender, EventArgs e)
-        {
-            Frm_Filtro fil = new Frm_Filtro();
-            Frm_Marcar_Asis_Manual asis = new Frm_Marcar_Asis_Manual();
-
-            fil.Show();
-            asis.ShowDialog();
-            fil.Hide();
-        }
 
         private void btn_Asis_With_Huella_Click(object sender, EventArgs e)
         {
@@ -141,6 +132,11 @@ namespace MicroSisPlani
             fis.Show();
             asis.ShowDialog();
             fis.Hide();
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

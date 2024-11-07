@@ -197,7 +197,7 @@ namespace Prj_Capa_Datos
                     xcn.Close();
                    
                 }
-                MessageBox.Show("Algo malo paso" + ex.Message, "Adevertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Algo malo paso" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             return null;
         }
@@ -563,7 +563,7 @@ namespace Prj_Capa_Datos
                     cn.Close();
 
                 }
-                MessageBox.Show("Falla en registrar falta" + ex.Message, "Adevertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Falla en registrar falta" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -596,9 +596,10 @@ namespace Prj_Capa_Datos
                     cn.Close();
 
                 }
-                MessageBox.Show("Algo malo paso" + ex.Message, "Adevertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Algo malo paso" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
     }
 }
+

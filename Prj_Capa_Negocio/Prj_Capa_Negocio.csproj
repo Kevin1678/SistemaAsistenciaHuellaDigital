@@ -47,7 +47,6 @@
     <Compile Include="RN_Contrato.cs" />
     <Compile Include="RN_Depto.cs" />
     <Compile Include="RN_Horario.cs" />
-    <Compile Include="RN_Justificacion.cs" />
     <Compile Include="RN_Personal.cs" />
     <Compile Include="RN_Rol.cs" />
     <Compile Include="RN_Seguros.cs" />

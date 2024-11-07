@@ -30,7 +30,6 @@ namespace MicroSisPlani
         {
             ConfigurarListview();
             ConfiguraListview_Asis();
-            ConfiguraListview_Justifi();
             Verficar_Robot_de_Faltas();
             CargarHorarios();
             ConfigurarListviewUser();
@@ -76,8 +75,6 @@ namespace MicroSisPlani
                 else if (lbl_rolNom.Text == "Cajera")
                 {
                     
-                   
-                    bt_exploJusti.Enabled = false;
                     bt_Config.Enabled = false;
                     elButtonUser.Enabled = false;
 
@@ -85,7 +82,6 @@ namespace MicroSisPlani
                 }
                 else if (lbl_rolNom.Text == "Secretaria")
                 {
-                    bt_exploJusti.Enabled = false;
                     bt_Config.Enabled = false;
                     elButtonUser.Enabled = false;
 
@@ -142,13 +138,11 @@ namespace MicroSisPlani
 
         }
 
-        private void bt_personal_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-
             elTabPage2.Visible = true;
             elTab1.SelectedTabPageIndex = 1;
             Cargar_todo_Personal();
-
         }
 
         private void Frm_Principal_FormClosing(object sender, FormClosingEventArgs e)
@@ -399,7 +393,7 @@ namespace MicroSisPlani
 
         }
 
-        private void bt_Config_Click(object sender, EventArgs e)
+        private void bt_Config_Click_1(object sender, EventArgs e)
         {
             elTabPage4.Visible = true;
             elTab1.SelectedTabPageIndex = 3;
@@ -769,7 +763,6 @@ namespace MicroSisPlani
 
         private void bt_cerrarjusti_Click(object sender, EventArgs e)
         {
-            elTabPage5.Visible = false;
             elTabPage1.Visible = true;
             elTab1.SelectedTabPageIndex = 0;
         }
@@ -779,356 +772,9 @@ namespace MicroSisPlani
             elTabPage4.Visible = false;
             elTab1.SelectedTabPageIndex = 0;
         }
+        #region
 
-
-        #region TODO DE JUASTIFICACION
-        private void ConfiguraListview_Justifi()
-        {
-            var lis = lsv_justifi;
-            lis.Columns.Clear();
-            lis.Items.Clear();
-            lis.View = View.Details;
-            lis.GridLines = false;
-            lis.FullRowSelect = true;
-            lis.Scrollable = true;
-            lis.HideSelection = false;
-
-            lis.Columns.Add("Idjusti", 0, HorizontalAlignment.Left);
-            lis.Columns.Add("IdPerso", 0, HorizontalAlignment.Left);
-            lis.Columns.Add("Nombres del Personal", 316, HorizontalAlignment.Left);
-            lis.Columns.Add("Motivo",110, HorizontalAlignment.Left);
-            lis.Columns.Add("Fecha", 120, HorizontalAlignment.Left);
-            lis.Columns.Add("Fecha", 120, HorizontalAlignment.Left);
-            lis.Columns.Add("Estado", 120, HorizontalAlignment.Left);
-            lis.Columns.Add("Detalle Justifi", 0, HorizontalAlignment.Left);
-        }
-
-        private void LlenarListview_Justi(DataTable data)
-        {
-            lsv_justifi.Items.Clear();
-            for (int i=0;i<data.Rows.Count;i++)
-            {
-                DataRow dr = data.Rows[i];
-                ListViewItem list = new ListViewItem(dr["Id_justi"].ToString());
-                list.SubItems.Add(dr["Id_Pernl"].ToString());
-                list.SubItems.Add(dr["Nombre_Completo"].ToString());
-                list.SubItems.Add(dr["PrincipalMotivo"].ToString());
-                list.SubItems.Add(dr["FechaEmi"].ToString());
-                list.SubItems.Add(dr["FechaJusti"].ToString());
-                list.SubItems.Add(dr["EstadoJus"].ToString());
-                list.SubItems.Add(dr["Detalle_Justi"].ToString());
-
-                lsv_justifi.Items.Add(list);
-
-            }
-            lbl_totaljusti.Text = Convert.ToString(lsv_justifi.Items.Count);
-        }
-
-        private void Cargar_todas_Justificaciones()
-        {
-            RN_Justificacion obj = new RN_Justificacion();
-            DataTable dt = new DataTable();
-
-            dt = obj.RN_Cargar_Todos_Justificacion();
-            if (dt.Rows.Count > 0)
-            {
-                LlenarListview_Justi(dt);
-
-            }
-            else
-            {
-                lsv_justifi.Items.Clear();
-            }
-
-        }
-
-        private void Buscar_Justificacio_porValor(string xvalor)
-        {
-            RN_Justificacion obj = new RN_Justificacion();
-            DataTable dt = new DataTable();
-            dt = obj.RN_BuscarJustificacion_porValor(xvalor.Trim());
-            if (dt.Rows.Count>0)
-            {
-                LlenarListview_Justi(dt);
-
-            }
-            else { lsv_justifi.Items.Clear(); }
-        }
-        
-
-
-        private void bt_mostrarJusti_Click(object sender, EventArgs e)
-        {
-            Cargar_todas_Justificaciones();
-        }
-
-        private void bt_editJusti_Click(object sender, EventArgs e)
-        {
-            Frm_Filtro fil = new Frm_Filtro();
-            Frm_Reg_Justificacion per = new Frm_Reg_Justificacion();
-
-            if (lsv_justifi.SelectedIndices.Count==0)
-            {
-                fil.Show();
-                MessageBox.Show("Selecciona un Item por Favor ", "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                fil.Hide();
-            }
-            else
-            {
-                var lsv = lsv_justifi.SelectedItems[0];
-                string xidsocio = lsv.SubItems[1].Text;
-                string xidJusti = lsv.SubItems[0].Text;
-                string xnombre= lsv.SubItems[2].Text;
-
-                fil.Show();
-                per.xedit = false;
-                per.txt_IdPersona.Text = xidsocio;
-                per.txt_nompersona.Text = xnombre;
-                per.txt_idjusti.Text = xidJusti;
-                per.BuscarJustificacion(xidJusti);
-                per.ShowDialog();
-                fil.Hide();
-                if (Convert.ToString(per.Tag) == "")
-                    return;
-                {
-                    Cargar_todas_Justificaciones();
-                    elTab1.SelectedTabPageIndex = 4;
-                    elTabPage5.Visible = true;
-
-                } 
-            }
-        }
         #endregion
-
-        private void bt_solicitarJustificacion_Click(object sender, EventArgs e)
-        {
-            Frm_Filtro fil = new Frm_Filtro();
-            Frm_Reg_Justificacion per = new Frm_Reg_Justificacion();
-
-            if (lsv_person.SelectedIndices.Count == 0)
-            {
-                fil.Show();
-                MessageBox.Show("Selecciona un Personal para Solicitar una Justificacion por Favor ", "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                fil.Hide();
-            }
-            else
-            {
-                var lsv = lsv_person.SelectedItems[0];
-                string xidsocio = lsv.SubItems[0].Text;             
-                string xnombre = lsv.SubItems[2].Text;
-
-                fil.Show();
-                per.xedit = false;
-                per.txt_IdPersona.Text = xidsocio;
-                per.txt_nompersona.Text = xnombre;
-                per.txt_idjusti.Text = RN_Utilitario.RN_NroDoc(4);         
-                per.ShowDialog();
-                fil.Hide();
-                if (Convert.ToString(per.Tag) == "")
-                    return;
-                {
-                    Cargar_todas_Justificaciones();
-                    elTab1.SelectedTabPageIndex = 4;
-                    elTabPage5.Visible = true;
-
-                }
-            }
-        }
-
-        private void bt_aprobarJustificacion_Click(object sender, EventArgs e)
-        {
-            Frm_Advertencia adver = new Frm_Advertencia();
-            Frm_Sino sino = new Frm_Sino();
-            Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
-            Frm_Filtro fil = new Frm_Filtro();
-            RN_Justificacion obj = new RN_Justificacion();
-
-            if (lsv_justifi.SelectedIndices.Count == 0)
-            {
-                fil.Show();
-                adver.Lbl_Msm1.Text = "Seleccione el Item que Desea Aprobar";
-                adver.ShowDialog();
-                fil.Hide();return;
-            }
-            else
-            {
-                var lsv = lsv_justifi.SelectedItems[0];
-                string xidjus = lsv.SubItems[0].Text;
-                string xidper = lsv.SubItems[1].Text;
-                string xstadojus = lsv.SubItems[6].Text;
-                if (xstadojus.Trim() == "Aprobado") { fil.Show();
-                    adver.Lbl_Msm1.Text = "La Justificacion Selecionada, ya Fue Aprobada";
-                    adver.ShowDialog();
-                    fil.Hide();
-                    return; 
-                }
-                sino.Lbl_msm1.Text = "Estas Seguro de Aprobar la Justificacion?";
-                fil.Show();
-                sino.ShowDialog();
-                fil.Hide();
-
-                if(Convert.ToString(sino.Tag)=="Si")
-                {
-                    obj.RN_Aprobar_Justificacion(xidjus, xidper);
-                    if(BD_Justificacion.tryed==true)
-                    {
-                        fil.Show();
-                        ok.Lbl_msm1.Text = "Justifiacion Aprobada";
-                        ok.ShowDialog();
-                        fil.Hide();
-                        Buscar_Justificacio_porValor(xidjus);
-                    }
-                }
-            }
-            }
-
-        private void bt_desaprobarJustificacion_Click(object sender, EventArgs e)
-        {
-            Frm_Advertencia adver = new Frm_Advertencia();
-            Frm_Sino sino = new Frm_Sino();
-            Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
-            Frm_Filtro fil = new Frm_Filtro();
-            RN_Justificacion obj = new RN_Justificacion();
-
-            if (lsv_justifi.SelectedIndices.Count == 0)
-            {
-                fil.Show();
-                adver.Lbl_Msm1.Text = "Seleccione el Item que Desea Desaprobar";
-                adver.ShowDialog();
-                fil.Hide(); return;
-            }
-            else
-            {
-                var lsv = lsv_justifi.SelectedItems[0];
-                string xidjus = lsv.SubItems[0].Text;
-                string xidper = lsv.SubItems[1].Text;
-                string xstadojus = lsv.SubItems[6].Text;
-                if (xstadojus.Trim() == "Falta Aprobar")
-                {
-                    fil.Show();
-                    adver.Lbl_Msm1.Text = "La Justificacion Selecionada, aun no Fue Aprobada";
-                    adver.ShowDialog(); 
-                    fil.Hide();
-                    return;
-                }
-                sino.Lbl_msm1.Text = "Estas Seguro de Desaprobar la Justificacion?"+"\n\r"+" - Recuerda que este proceso es bajo su entera Responsabilidad";
-                fil.Show();
-                sino.ShowDialog();
-                fil.Hide();
-
-                if (Convert.ToString(sino.Tag) == "Si")
-                {
-                    obj.RN_Desaprobar_Justificacion(xidjus, xidper);
-                    if (BD_Justificacion.tryed == true)
-                    {
-                        fil.Show();
-                        ok.Lbl_msm1.Text = "Justifiacion Pendiente de Aprobacion";
-                        ok.ShowDialog();
-                        fil.Hide();
-                        Buscar_Justificacio_porValor(xidjus);
-                    }
-                }
-            }
-        }
-
-        private void bt_ElimiJusti_Click(object sender, EventArgs e)
-        {
-            Frm_Advertencia adver = new Frm_Advertencia();
-            Frm_Sino sino = new Frm_Sino();
-            Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
-            Frm_Filtro fil = new Frm_Filtro();
-            RN_Justificacion obj = new RN_Justificacion();
-
-            if (lsv_justifi.SelectedIndices.Count == 0)
-            {
-                fil.Show();
-                adver.Lbl_Msm1.Text = "Seleccione el Item que Deseas Eliminar";
-                adver.ShowDialog();
-                fil.Hide(); return;
-            }
-            else
-            {
-                var lsv = lsv_justifi.SelectedItems[0];
-                string xidjus = lsv.SubItems[0].Text;
-
-                sino.Lbl_msm1.Text = "Estas Seguro de Eliminar la Justificacion?" + "\n\r" + " - Recuerda que este proceso es bajo su entera Responsabilidad";
-                fil.Show();
-                sino.ShowDialog();
-                fil.Hide();
-
-              
-
-                if (Convert.ToString(sino.Tag) == "Si")
-                {
-                    obj.RN_Eliminar_Justificacion(xidjus);
-                    if (BD_Justificacion.tryed == true)
-                    {
-                        fil.Show();
-                        ok.Lbl_msm1.Text = "Justifiacion Eliminada";
-                        ok.ShowDialog();
-                        fil.Hide();
-                        Buscar_Justificacio_porValor(xidjus);
-                    }
-                }
-            }
-        }
-
-        private void bt_CopiarNroJusti_Click(object sender, EventArgs e)
-        {
-            Frm_Advertencia adver = new Frm_Advertencia();
-            Frm_Filtro fis = new Frm_Filtro();
-
-            if (lsv_justifi.SelectedIndices.Count == 0)
-            {
-                fis.Show();
-                adver.Lbl_Msm1.Text = "Seleccione el Item que Deseas Copiar";
-                adver.ShowDialog();
-                fis.Hide();
-                return;
-
-            }
-            else
-            {
-                var lsv = lsv_justifi.SelectedItems[0];
-                string xci = lsv.SubItems[0].Text;
-
-                Clipboard.Clear();
-                Clipboard.SetText(xci.Trim());
-
-            }
-        }
-
-        private void txt_buscarjusti_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode==Keys.Enter)
-            {
-                if (txt_buscarjusti.Text.Trim().Length>1)
-                {
-                    Buscar_Justificacio_porValor(txt_buscarjusti.Text);
-                }
-                else
-                {
-                    Cargar_todas_Justificaciones();
-                }
-               
-            }
-        }
-
-        private void lsv_justifi_MouseClick(object sender, MouseEventArgs e)
-        {
-            var lsv = lsv_justifi.SelectedItems[0];
-            string xnombre = lsv.SubItems[7].Text;
-
-            lbl_Detalle.Text = xnombre.Trim();
-        }
-
-        private void bt_exploJusti_Click(object sender, EventArgs e)
-        {
-            elTab1.SelectedTabPageIndex = 4;
-            elTabPage5.Visible = true;
-            Cargar_todas_Justificaciones();
-        }
-
         private void Btn_EditPerso_Click(object sender, EventArgs e)
         {
             Frm_Filtro fil = new Frm_Filtro();
@@ -1628,7 +1274,7 @@ namespace MicroSisPlani
             }
         }
 
-        private void elButtonUser_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             elTabPage6.Visible = true;
             elTab1.SelectedTabPageIndex = 5;
@@ -1721,5 +1367,14 @@ namespace MicroSisPlani
 
             }
         }
+
+        private void bt_Asis_Click(object sender, EventArgs e)
+        {
+            elTabPage3.Visible = true;
+            elTab1.SelectedTabPageIndex = 2;
+            Cargar_todasAsistencias_delDia(dtp_fechadeldia.Value);
+        }
+
+
     }
 }
