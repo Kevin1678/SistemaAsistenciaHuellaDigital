@@ -30,20 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Marcar_Asistencia));
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle1 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle2 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle3 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             Klik.Windows.Forms.v1.Common.PaintStyle paintStyle4 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             Klik.Windows.Forms.v1.Common.PaintStyle paintStyle5 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             Klik.Windows.Forms.v1.Common.PaintStyle paintStyle6 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             Klik.Windows.Forms.v1.Common.PaintStyle paintStyle7 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             Klik.Windows.Forms.v1.Common.PaintStyle paintStyle8 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle3 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle2 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle1 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             this.xVerificationControl = new DPFP.Gui.Verification.VerificationControl();
             this.pnl_titulo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -80,6 +79,8 @@
             this.tmr_Conta = new System.Windows.Forms.Timer(this.components);
             this.lbl_waiting = new System.Windows.Forms.Label();
             this.pnl_Msm = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnl_titulo.SuspendLayout();
             this.GroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbl_totaltarde)).BeginInit();
@@ -116,6 +117,7 @@
             this.pnl_titulo.Name = "pnl_titulo";
             this.pnl_titulo.Size = new System.Drawing.Size(1180, 50);
             this.pnl_titulo.TabIndex = 7;
+            this.pnl_titulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_titulo_Paint);
             this.pnl_titulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_titulo_MouseMove);
             // 
             // label7
@@ -145,17 +147,12 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.BackColor = System.Drawing.Color.Red;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Location = new System.Drawing.Point(0, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1180, 4);
             this.label1.TabIndex = 0;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 20;
-            this.bunifuElipse1.TargetControl = this;
             // 
             // GroupBox2
             // 
@@ -335,6 +332,7 @@
             this.lbl_msm.TabIndex = 110;
             this.lbl_msm.Text = "Dni:";
             this.lbl_msm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_msm.Click += new System.EventHandler(this.lbl_msm_Click);
             // 
             // lbl_totaltarde
             // 
@@ -342,9 +340,9 @@
             this.lbl_totaltarde.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_totaltarde.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
             this.lbl_totaltarde.Cursor = System.Windows.Forms.Cursors.Default;
-            paintStyle4.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle4.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_totaltarde.FlashStyle = paintStyle4;
+            paintStyle1.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle1.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_totaltarde.FlashStyle = paintStyle1;
             this.lbl_totaltarde.Location = new System.Drawing.Point(955, 381);
             this.lbl_totaltarde.Name = "lbl_totaltarde";
             this.lbl_totaltarde.Size = new System.Drawing.Size(52, 23);
@@ -359,9 +357,9 @@
             this.lbl_justifi.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_justifi.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_justifi.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle5.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle5.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_justifi.FlashStyle = paintStyle5;
+            paintStyle2.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle2.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_justifi.FlashStyle = paintStyle2;
             this.lbl_justifi.Location = new System.Drawing.Point(858, 381);
             this.lbl_justifi.Name = "lbl_justifi";
             this.lbl_justifi.Size = new System.Drawing.Size(91, 23);
@@ -404,9 +402,9 @@
             this.Lbl_Idperso.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.Lbl_Idperso.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.Lbl_Idperso.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle6.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle6.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.Lbl_Idperso.FlashStyle = paintStyle6;
+            paintStyle3.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle3.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.Lbl_Idperso.FlashStyle = paintStyle3;
             this.Lbl_Idperso.Location = new System.Drawing.Point(229, 381);
             this.Lbl_Idperso.Name = "Lbl_Idperso";
             this.Lbl_Idperso.Size = new System.Drawing.Size(91, 23);
@@ -421,9 +419,9 @@
             this.lbl_Doc.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_Doc.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_Doc.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle7.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle7.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_Doc.FlashStyle = paintStyle7;
+            paintStyle4.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle4.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_Doc.FlashStyle = paintStyle4;
             this.lbl_Doc.Location = new System.Drawing.Point(739, 381);
             this.lbl_Doc.Name = "lbl_Doc";
             this.lbl_Doc.Size = new System.Drawing.Size(104, 23);
@@ -441,15 +439,16 @@
             this.picSocio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSocio.TabIndex = 113;
             this.picSocio.TabStop = false;
+            this.picSocio.Click += new System.EventHandler(this.picSocio_Click);
             // 
             // lbl_nombresocio
             // 
             this.lbl_nombresocio.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_nombresocio.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_nombresocio.BorderStyle.SolidColor = System.Drawing.Color.WhiteSmoke;
-            paintStyle8.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle8.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_nombresocio.FlashStyle = paintStyle8;
+            paintStyle5.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle5.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_nombresocio.FlashStyle = paintStyle5;
             this.lbl_nombresocio.Location = new System.Drawing.Point(229, 311);
             this.lbl_nombresocio.Name = "lbl_nombresocio";
             this.lbl_nombresocio.Size = new System.Drawing.Size(766, 32);
@@ -487,10 +486,10 @@
             this.lbl_hora.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_hora.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_hora.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle3.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle3.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_hora.FlashStyle = paintStyle3;
-            this.lbl_hora.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            paintStyle6.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle6.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_hora.FlashStyle = paintStyle6;
+            this.lbl_hora.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.lbl_hora.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_hora.Location = new System.Drawing.Point(1019, 56);
             this.lbl_hora.Name = "lbl_hora";
@@ -512,9 +511,9 @@
             this.Lbl_HoraEntrada.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.Lbl_HoraEntrada.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.Lbl_HoraEntrada.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle2.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle2.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.Lbl_HoraEntrada.FlashStyle = paintStyle2;
+            paintStyle7.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle7.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.Lbl_HoraEntrada.FlashStyle = paintStyle7;
             this.Lbl_HoraEntrada.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.Lbl_HoraEntrada.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Lbl_HoraEntrada.Location = new System.Drawing.Point(12, 56);
@@ -532,16 +531,17 @@
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // lbl_Cont
             // 
             this.lbl_Cont.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_Cont.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_Cont.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle1.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle1.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_Cont.FlashStyle = paintStyle1;
-            this.lbl_Cont.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            paintStyle8.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle8.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_Cont.FlashStyle = paintStyle8;
+            this.lbl_Cont.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.lbl_Cont.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Cont.Location = new System.Drawing.Point(6, 7);
             this.lbl_Cont.Name = "lbl_Cont";
@@ -584,12 +584,28 @@
             this.pnl_Msm.TabIndex = 129;
             this.pnl_Msm.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(521, 566);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 130;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // Frm_Marcar_Asistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1180, 569);
+            this.ClientSize = new System.Drawing.Size(1180, 601);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnl_Msm);
             this.Controls.Add(this.Lbl_HoraEntrada);
             this.Controls.Add(this.lbl_hora);
@@ -639,7 +655,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         internal System.Windows.Forms.GroupBox GroupBox2;
         internal System.Windows.Forms.Label Label21;
         internal System.Windows.Forms.Label lbl_TotalHotrabajda;
@@ -676,6 +691,8 @@
         internal System.Windows.Forms.Label labelTotalPago;
         internal System.Windows.Forms.Label labelpagoHora;
         internal System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
 

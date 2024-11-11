@@ -34,6 +34,7 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.ElDivider1 = new Klik.Windows.Forms.v1.EntryLib.ELDivider();
             this.pnl_titulo = new System.Windows.Forms.Panel();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.txt_pass = new Klik.Windows.Forms.v1.EntryLib.ELEntryBox();
             this.btn_Aceptar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.Label15 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_Asis_With_Huella = new System.Windows.Forms.Button();
             this.txt_usu = new Klik.Windows.Forms.v1.EntryLib.ELEntryBox();
-            this.btn_Salir = new System.Windows.Forms.Button();
             this.Label12 = new System.Windows.Forms.Label();
             this.Label13 = new System.Windows.Forms.Label();
             this.PicLogo = new System.Windows.Forms.PictureBox();
@@ -92,6 +92,20 @@
             this.pnl_titulo.Size = new System.Drawing.Size(357, 42);
             this.pnl_titulo.TabIndex = 23;
             this.pnl_titulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_titulo_MouseMove);
+            // 
+            // btn_Salir
+            // 
+            this.btn_Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Salir.FlatAppearance.BorderSize = 0;
+            this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Salir.ForeColor = System.Drawing.Color.White;
+            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
+            this.btn_Salir.Location = new System.Drawing.Point(313, 7);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(32, 32);
+            this.btn_Salir.TabIndex = 464;
+            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // txt_pass
             // 
@@ -223,20 +237,6 @@
             this.txt_usu.ValidationStyle.PasswordChar = '\0';
             this.txt_usu.Value = "";
             this.txt_usu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_usu_KeyDown);
-            // 
-            // btn_Salir
-            // 
-            this.btn_Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Salir.FlatAppearance.BorderSize = 0;
-            this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Salir.ForeColor = System.Drawing.Color.White;
-            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
-            this.btn_Salir.Location = new System.Drawing.Point(313, 7);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(32, 32);
-            this.btn_Salir.TabIndex = 464;
-            this.btn_Salir.UseVisualStyleBackColor = true;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // Label12
             // 

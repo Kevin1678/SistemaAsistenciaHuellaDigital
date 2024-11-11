@@ -1277,7 +1277,7 @@ namespace MicroSisPlani
         private void button3_Click(object sender, EventArgs e)
         {
             elTabPage6.Visible = true;
-            elTab1.SelectedTabPageIndex = 5;
+            elTab1.SelectedTabPageIndex = 4;
             Cargar_todo_Usuario();
         }
 

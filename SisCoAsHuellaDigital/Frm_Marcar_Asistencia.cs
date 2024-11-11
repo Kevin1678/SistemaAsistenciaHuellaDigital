@@ -14,11 +14,20 @@ using MicroSisPlani.Msm_Forms;
 using System.IO;
 using Prj_Capa_Datos;
 using System.Diagnostics.Contracts;
+using System.Net;
+using System.Net.Sockets;
+using System.Web.UI.WebControls;
 
 namespace MicroSisPlani
 {
     public partial class Frm_Marcar_Asistencia : Form
     {
+        int port, puerto = 8000;
+        string message, cliente = "DESKTOP-4VP2DAU";
+        int byteCount;
+        NetworkStream stream;
+        byte[] senData;
+        TcpClient client;
         public Frm_Marcar_Asistencia()
         {
             InitializeComponent();
@@ -30,6 +39,26 @@ namespace MicroSisPlani
             CargarHorarios();
             Verificar = new DPFP.Verification.Verification();
             Resultado = new DPFP.Verification.Verification.Result();
+
+            if (!int.TryParse(puerto.ToString(), out port))
+            {
+                MessageBox.Show("Port number not valied");
+               
+            }
+            try
+            {
+                client = new TcpClient(cliente, port);
+                MessageBox.Show("Connection Made");
+                
+            }
+            catch (System.Net.Sockets.SocketException)
+            {
+                MessageBox.Show("Connection Failed");
+                
+            }
+
+            
+
         }
 
         private DPFP.Verification.Verification Verificar;
@@ -185,6 +214,7 @@ namespace MicroSisPlani
                                         tmr_Conta.Enabled = true;
 
                                         TerminarBucle = true;
+                                        
                                     }
                                 
                             }
@@ -206,7 +236,10 @@ namespace MicroSisPlani
 
                                     lbl_Cont.Text = "10";
                                     xVerificationControl.Enabled = false;
+                                    text();
+                                    texthora();
                                     return;
+                                    
                                 }
 
                                 calcular_Minutos_Tardanza();
@@ -226,6 +259,8 @@ namespace MicroSisPlani
                                     xVerificationControl.Enabled = false;
                                     lbl_Cont.Text = "10";
                                     TerminarBucle = true;
+                                    text();
+                                    texthora();
                                 }
                             }
 
@@ -261,6 +296,8 @@ namespace MicroSisPlani
             catch (Exception ex)
             {
                 MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                text();
+                texthora();
             }
 
         }
@@ -346,6 +383,7 @@ namespace MicroSisPlani
                 pnl_Msm.Visible = false;
                 xVerificationControl.Enabled = true;
                 lbl_Cont.Text = "10";
+                
             }
         }
 
@@ -389,6 +427,82 @@ namespace MicroSisPlani
 
 
         } //Fin de calcular:
+
+        private void lbl_msm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                message = lbl_nombresocio.Text;
+                byteCount = Encoding.ASCII.GetByteCount(message);
+                senData = new byte[byteCount];
+                senData = Encoding.ASCII.GetBytes(message);
+                stream = client.GetStream();
+                stream.Write(senData, 0, senData.Length);
+
+
+            }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Connection not installised");
+
+            }
+        }
+
+        private void text()
+        {
+            try
+            {
+                message = lbl_nombresocio.Text;
+                byteCount = Encoding.ASCII.GetByteCount(message);
+                senData = new byte[byteCount];
+                senData = Encoding.ASCII.GetBytes(message);
+                stream = client.GetStream();
+                stream.Write(senData, 0, senData.Length);
+                
+
+            }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Connection not installised");
+
+            }
+        }
+
+        private void texthora()
+        {
+            try
+            {
+                message = DateTime.Now.ToString();
+                byteCount = Encoding.ASCII.GetByteCount(message);
+                senData = new byte[byteCount];
+                senData = Encoding.ASCII.GetBytes(message);
+                stream = client.GetStream();
+                stream.Write(senData, 0, senData.Length);
+                 
+
+            }
+            catch (System.NullReferenceException)
+            {
+                MessageBox.Show("Connection not installised");
+
+            }
+        }
+
+        private void picSocio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
         void calcular_Horas_Trabajadas() //TRABAJADO EN HORAS
         {
             RN_Asistencia obj = new RN_Asistencia();
@@ -406,6 +520,9 @@ namespace MicroSisPlani
 
         } //Fin de calcular:
 
+        private void pnl_titulo_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

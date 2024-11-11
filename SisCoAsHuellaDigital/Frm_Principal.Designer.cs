@@ -57,7 +57,7 @@
             this.pnl_titu = new System.Windows.Forms.Panel();
             this.lbl_rolNom = new System.Windows.Forms.Label();
             this.Lbl_NomUsu = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_user = new System.Windows.Forms.PictureBox();
             this.btn_mini = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.SubMenu_Person = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -209,9 +209,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_titulo1 = new System.Windows.Forms.Panel();
             this.elTab1 = new Klik.Windows.Forms.v1.EntryLib.ELTab();
-            this.pic_user = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_titu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             this.SubMenu_Person.SuspendLayout();
             this.subMenuAsistencia.SuspendLayout();
             this.SubMenu_Usuario.SuspendLayout();
@@ -270,7 +270,7 @@
             this.elTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elTab1)).BeginInit();
             this.elTab1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -315,15 +315,15 @@
             this.Lbl_NomUsu.Text = "SistemasCompu";
             this.Lbl_NomUsu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBox1
+            // pic_user
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pic_user.Image = global::MicroSisPlani.Properties.Resources.user;
+            this.pic_user.Location = new System.Drawing.Point(1097, 11);
+            this.pic_user.Name = "pic_user";
+            this.pic_user.Size = new System.Drawing.Size(51, 54);
+            this.pic_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_user.TabIndex = 5;
+            this.pic_user.TabStop = false;
             // 
             // btn_mini
             // 
@@ -2205,7 +2205,7 @@
             // elDivider1
             // 
             this.elDivider1.FadeStyle = Klik.Windows.Forms.v1.EntryLib.DividerFadeStyles.Center;
-            this.elDivider1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.elDivider1.LineColor = System.Drawing.Color.Red;
             this.elDivider1.Location = new System.Drawing.Point(9, 67);
             this.elDivider1.Name = "elDivider1";
             this.elDivider1.Size = new System.Drawing.Size(1232, 23);
@@ -2380,15 +2380,15 @@
             this.elTab1.TabPages.Add(this.elTabPage6);
             this.elTab1.VisualStyle = Klik.Windows.Forms.v1.EntryLib.TabVisualStyles.Custom;
             // 
-            // pic_user
+            // pictureBox1
             // 
-            this.pic_user.Image = global::MicroSisPlani.Properties.Resources.user;
-            this.pic_user.Location = new System.Drawing.Point(1097, 11);
-            this.pic_user.Name = "pic_user";
-            this.pic_user.Size = new System.Drawing.Size(51, 54);
-            this.pic_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_user.TabIndex = 5;
-            this.pic_user.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // Frm_Principal
             // 
@@ -2408,7 +2408,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Principal_FormClosing);
             this.Load += new System.EventHandler(this.Frm_Principal_Load);
             this.pnl_titu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
             this.SubMenu_Person.ResumeLayout(false);
             this.subMenuAsistencia.ResumeLayout(false);
             this.SubMenu_Usuario.ResumeLayout(false);
@@ -2475,7 +2475,7 @@
             this.elTabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elTab1)).EndInit();
             this.elTab1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_user)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2531,7 +2531,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator20;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem bt_solicitarJustificacion;
         private Klik.Windows.Forms.v1.EntryLib.ELTab elTab1;
         private Klik.Windows.Forms.v1.EntryLib.ELTabPage elTabPage1;
@@ -2639,5 +2638,6 @@
         internal System.Windows.Forms.Button buttonUserAdd;
         private Klik.Windows.Forms.v1.EntryLib.ELDivider elDivider5;
         private System.Windows.Forms.PictureBox pic_user;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
