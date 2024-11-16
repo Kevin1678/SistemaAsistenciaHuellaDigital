@@ -23,7 +23,7 @@ namespace MicroSisPlani
     public partial class Frm_Marcar_Asistencia : Form
     {
         int port, puerto = 8000;
-        string message, cliente = "DESKTOP-4VP2DAU";
+        string message, cliente = "DESKTOP-NKUCHIS";
         int byteCount;
         NetworkStream stream;
         byte[] senData;
@@ -226,7 +226,7 @@ namespace MicroSisPlani
                                 {
                                     lbl_msm.BackColor = Color.MistyRose;
                                     lbl_msm.ForeColor = Color.Red;
-                                    lbl_msm.Text = "Estimado Usuario, Su hora de Enstrada ya Caduco, Vulve a Casa y Regrese Mañana";
+                                    lbl_msm.Text = "Su hora de Entrada ya Caducó, Vuelve a Casa y Regrese Mañana";
                                     
                                     
                                     
@@ -295,7 +295,7 @@ namespace MicroSisPlani
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Hubo un Error Inesperado: " + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 text();
                 texthora();
             }

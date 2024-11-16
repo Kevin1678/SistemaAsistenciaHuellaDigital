@@ -110,12 +110,6 @@
     <Compile Include="Frm_Marcar_Asistencia.Designer.cs">
       <DependentUpon>Frm_Marcar_Asistencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Marcar_Asis_Manual.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Marcar_Asis_Manual.Designer.cs">
-      <DependentUpon>Frm_Marcar_Asis_Manual.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,9 +249,6 @@
     <EmbeddedResource Include="Frm_Marcar_Asistencia.resx">
       <DependentUpon>Frm_Marcar_Asistencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Marcar_Asis_Manual.resx">
-      <DependentUpon>Frm_Marcar_Asis_Manual.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +381,10 @@
   <ItemGroup>
     <Content Include="alarm-clock_icon-icons.com_60726.ico" />
     <Content Include="Alarmclock_icon-icons.com_51215.ico" />
+    <None Include="Resources\icons8-usuario-100.png" />
+    <None Include="Resources\icons8-emoji-de-boton-de-marca-de-verificacion-96.png" />
+    <None Include="Resources\icons8-advertencia-96_1.png" />
+    <None Include="Resources\user1.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\Usuario-removebg-preview.png" />
     <None Include="Resources\cliente %281%29.png" />

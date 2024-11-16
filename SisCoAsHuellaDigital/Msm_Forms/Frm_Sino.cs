@@ -43,5 +43,10 @@ namespace MicroSisPlani.Msm_Forms
         {
 
         }
+
+        private void Lbl_msm1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

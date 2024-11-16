@@ -46,5 +46,10 @@ namespace MicroSisPlani.Msm_Forms
         {
             tocar_timbre();
         }
+
+        private void Lbl_msm1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,7 +37,6 @@
             this.btn_Salir = new System.Windows.Forms.Button();
             this.txt_pass = new Klik.Windows.Forms.v1.EntryLib.ELEntryBox();
             this.btn_Aceptar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
-            this.Label15 = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_Asis_With_Huella = new System.Windows.Forms.Button();
@@ -172,18 +171,6 @@
             this.btn_Aceptar.VisualStyle = Klik.Windows.Forms.v1.EntryLib.ButtonVisualStyles.Custom;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
-            // Label15
-            // 
-            this.Label15.AutoSize = true;
-            this.Label15.BackColor = System.Drawing.Color.Transparent;
-            this.Label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label15.ForeColor = System.Drawing.Color.DimGray;
-            this.Label15.Location = new System.Drawing.Point(134, 428);
-            this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(76, 17);
-            this.Label15.TabIndex = 460;
-            this.Label15.Text = "Version 2.0";
-            // 
             // lbl_estado
             // 
             this.lbl_estado.BackColor = System.Drawing.Color.Transparent;
@@ -277,10 +264,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(357, 454);
+            this.ClientSize = new System.Drawing.Size(357, 414);
             this.Controls.Add(this.btn_Asis_With_Huella);
             this.Controls.Add(this.lbl_estado);
-            this.Controls.Add(this.Label15);
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.Label12);
             this.Controls.Add(this.Label13);
@@ -309,7 +295,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        internal System.Windows.Forms.Label Label15;
         internal Klik.Windows.Forms.v1.EntryLib.ELButton btn_Aceptar;
         internal System.Windows.Forms.Label Label12;
         internal System.Windows.Forms.Label Label13;

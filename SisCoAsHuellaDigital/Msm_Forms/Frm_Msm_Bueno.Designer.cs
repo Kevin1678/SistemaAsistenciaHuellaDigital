@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Msm_Bueno));
             this.pnl_titles = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_TituPrinci = new System.Windows.Forms.Label();
             this.Lbl_msm1 = new System.Windows.Forms.Label();
             this.btn_acept = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pnl_titles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_acept)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_titles
@@ -55,23 +54,12 @@
             this.pnl_titles.TabIndex = 26;
             this.pnl_titles.VisualStyle = Klik.Windows.Forms.v1.Common.ControlVisualStyles.Custom;
             // 
-            // PictureBox1
-            // 
-            this.PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
-            this.PictureBox1.Location = new System.Drawing.Point(203, 33);
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PictureBox1.TabIndex = 27;
-            this.PictureBox1.TabStop = false;
-            // 
             // Lbl_TituPrinci
             // 
             this.Lbl_TituPrinci.AutoSize = true;
             this.Lbl_TituPrinci.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_TituPrinci.ForeColor = System.Drawing.Color.DimGray;
-            this.Lbl_TituPrinci.Location = new System.Drawing.Point(75, 100);
+            this.Lbl_TituPrinci.Location = new System.Drawing.Point(112, 102);
             this.Lbl_TituPrinci.Name = "Lbl_TituPrinci";
             this.Lbl_TituPrinci.Size = new System.Drawing.Size(317, 36);
             this.Lbl_TituPrinci.TabIndex = 31;
@@ -86,8 +74,8 @@
             this.Lbl_msm1.Name = "Lbl_msm1";
             this.Lbl_msm1.Size = new System.Drawing.Size(487, 86);
             this.Lbl_msm1.TabIndex = 32;
-            this.Lbl_msm1.Text = "¿Quieres Quitarlo del Carrito?";
             this.Lbl_msm1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Lbl_msm1.Click += new System.EventHandler(this.Lbl_msm1_Click);
             // 
             // btn_acept
             // 
@@ -105,7 +93,7 @@
             this.btn_acept.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.btn_acept.FlashStyle.SolidColor = System.Drawing.Color.OrangeRed;
             this.btn_acept.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_acept.Location = new System.Drawing.Point(146, 271);
+            this.btn_acept.Location = new System.Drawing.Point(169, 259);
             this.btn_acept.Name = "btn_acept";
             this.btn_acept.Size = new System.Drawing.Size(186, 42);
             this.btn_acept.StateStyles.HoverStyle.BackgroundGradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -126,6 +114,17 @@
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBox1.Image = global::MicroSisPlani.Properties.Resources.icons8_emoji_de_boton_de_marca_de_verificacion_96;
+            this.PictureBox1.Location = new System.Drawing.Point(217, 12);
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox1.TabIndex = 27;
+            this.PictureBox1.TabStop = false;
+            // 
             // Frm_Msm_Bueno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,8 +142,8 @@
             this.Load += new System.EventHandler(this.Frm_Msm_Bueno_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_Msm_Bueno_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pnl_titles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_acept)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

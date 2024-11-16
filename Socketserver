@@ -1,0 +1,26 @@
+import socket
+import time 
+
+listensocket = socket.socket()
+Port = 8000
+maxConnections = 999
+IP = socket.gethostname()
+
+listensocket.bind(('', Port))
+
+listensocket.listen(maxConnections)
+print("Server started at " + IP + " on port " + str(Port))
+
+(Clientsocket, address) = listensocket.accept()
+print("New connection made!")
+
+runnig = True
+
+
+while runnig:
+  message = Clientsocket.recv(1024).decode()
+  print(message) 
+  if not message == "":
+    time.sleep(5)
+
+

@@ -124,6 +124,7 @@
             this.Lbl_msm1.TabIndex = 29;
             this.Lbl_msm1.Text = "¿Quieres Quitarlo del Carrito?";
             this.Lbl_msm1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_msm1.Click += new System.EventHandler(this.Lbl_msm1_Click);
             // 
             // BunifuElipse1
             // 

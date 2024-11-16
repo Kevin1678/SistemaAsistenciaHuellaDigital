@@ -32,20 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Registro_Personal));
             this.pnl_titulo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_Salir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.txt_doc = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txt_nombres = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txt_direccion = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -57,14 +46,25 @@
             this.cbo_rol = new System.Windows.Forms.ComboBox();
             this.cbo_Depto = new System.Windows.Forms.ComboBox();
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
-            this.Pic_persona = new System.Windows.Forms.PictureBox();
             this.btn_aceptar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btn_cancelar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Pic_persona = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_Salir = new System.Windows.Forms.Button();
             this.pnl_titulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_persona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_aceptar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_persona)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_titulo
@@ -92,23 +92,9 @@
             this.label7.TabIndex = 25;
             this.label7.Text = "REGISTRO DE PERSONAL";
             // 
-            // btn_Salir
-            // 
-            this.btn_Salir.FlatAppearance.BorderSize = 0;
-            this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Salir.ForeColor = System.Drawing.Color.White;
-            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
-            this.btn_Salir.Location = new System.Drawing.Point(750, 8);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(32, 32);
-            this.btn_Salir.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.btn_Salir, "Salir / Cerrar Ventana");
-            this.btn_Salir.UseVisualStyleBackColor = true;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
-            // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.BackColor = System.Drawing.Color.Red;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Location = new System.Drawing.Point(0, 48);
             this.label1.Name = "label1";
@@ -123,126 +109,6 @@
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(88, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 24);
-            this.label2.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.label2, "Nro de Doc");
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(88, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 24);
-            this.label3.TabIndex = 28;
-            this.toolTip1.SetToolTip(this.label3, "Nombre Completo");
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.Location = new System.Drawing.Point(88, 205);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 24);
-            this.label4.TabIndex = 30;
-            this.toolTip1.SetToolTip(this.label4, "Direccion");
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.Location = new System.Drawing.Point(88, 252);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 24);
-            this.label5.TabIndex = 32;
-            this.toolTip1.SetToolTip(this.label5, "Correo electronico");
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.Location = new System.Drawing.Point(88, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 24);
-            this.label6.TabIndex = 34;
-            this.toolTip1.SetToolTip(this.label6, "Nro de Dni");
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
-            this.label8.Location = new System.Drawing.Point(88, 299);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 24);
-            this.label8.TabIndex = 36;
-            this.toolTip1.SetToolTip(this.label8, "Nro de Celular");
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.Location = new System.Drawing.Point(375, 298);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 24);
-            this.label9.TabIndex = 37;
-            this.toolTip1.SetToolTip(this.label9, "Fecha Nacimiento");
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
-            this.label10.Location = new System.Drawing.Point(88, 343);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 24);
-            this.label10.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.label10, "Sexo");
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
-            this.label11.Location = new System.Drawing.Point(88, 380);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 24);
-            this.label11.TabIndex = 46;
-            this.toolTip1.SetToolTip(this.label11, "Rol del Personal");
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
-            this.label12.Location = new System.Drawing.Point(88, 415);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 24);
-            this.label12.TabIndex = 47;
-            this.toolTip1.SetToolTip(this.label12, "Distrito");
             // 
             // txt_doc
             // 
@@ -412,17 +278,6 @@
             this.dtp_fecha.TabIndex = 42;
             this.dtp_fecha.Visible = false;
             // 
-            // Pic_persona
-            // 
-            this.Pic_persona.Image = global::MicroSisPlani.Properties.Resources.user;
-            this.Pic_persona.Location = new System.Drawing.Point(603, 108);
-            this.Pic_persona.Name = "Pic_persona";
-            this.Pic_persona.Size = new System.Drawing.Size(160, 151);
-            this.Pic_persona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Pic_persona.TabIndex = 43;
-            this.Pic_persona.TabStop = false;
-            this.Pic_persona.Click += new System.EventHandler(this.Pic_persona_Click);
-            // 
             // btn_aceptar
             // 
             this.btn_aceptar.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
@@ -487,6 +342,151 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
+            this.label12.Location = new System.Drawing.Point(88, 415);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(24, 24);
+            this.label12.TabIndex = 47;
+            this.toolTip1.SetToolTip(this.label12, "Distrito");
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Image = ((System.Drawing.Image)(resources.GetObject("label11.Image")));
+            this.label11.Location = new System.Drawing.Point(88, 380);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(24, 24);
+            this.label11.TabIndex = 46;
+            this.toolTip1.SetToolTip(this.label11, "Rol del Personal");
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Image = ((System.Drawing.Image)(resources.GetObject("label10.Image")));
+            this.label10.Location = new System.Drawing.Point(88, 343);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 24);
+            this.label10.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.label10, "Sexo");
+            // 
+            // Pic_persona
+            // 
+            this.Pic_persona.Image = global::MicroSisPlani.Properties.Resources.user1;
+            this.Pic_persona.Location = new System.Drawing.Point(603, 108);
+            this.Pic_persona.Name = "Pic_persona";
+            this.Pic_persona.Size = new System.Drawing.Size(160, 151);
+            this.Pic_persona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pic_persona.TabIndex = 43;
+            this.Pic_persona.TabStop = false;
+            this.Pic_persona.Click += new System.EventHandler(this.Pic_persona_Click);
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
+            this.label9.Location = new System.Drawing.Point(375, 298);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(24, 24);
+            this.label9.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.label9, "Fecha Nacimiento");
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
+            this.label8.Location = new System.Drawing.Point(88, 299);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 24);
+            this.label8.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.label8, "Nro de Celular");
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.Location = new System.Drawing.Point(88, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 24);
+            this.label6.TabIndex = 34;
+            this.toolTip1.SetToolTip(this.label6, "Nro de Dni");
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
+            this.label5.Location = new System.Drawing.Point(88, 252);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 24);
+            this.label5.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.label5, "Correo electronico");
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.Location = new System.Drawing.Point(88, 205);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 24);
+            this.label4.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.label4, "Direccion");
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.Location = new System.Drawing.Point(88, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 24);
+            this.label3.TabIndex = 28;
+            this.toolTip1.SetToolTip(this.label3, "Nombre Completo");
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(88, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 24);
+            this.label2.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.label2, "Nro de Doc");
+            // 
+            // btn_Salir
+            // 
+            this.btn_Salir.FlatAppearance.BorderSize = 0;
+            this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Salir.ForeColor = System.Drawing.Color.White;
+            this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
+            this.btn_Salir.Location = new System.Drawing.Point(750, 8);
+            this.btn_Salir.Name = "btn_Salir";
+            this.btn_Salir.Size = new System.Drawing.Size(32, 32);
+            this.btn_Salir.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btn_Salir, "Salir / Cerrar Ventana");
+            this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
             // Frm_Registro_Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,9 +525,9 @@
             this.Load += new System.EventHandler(this.Frm_Registro_Personal_Load);
             this.pnl_titulo.ResumeLayout(false);
             this.pnl_titulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_persona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_aceptar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_persona)).EndInit();
             this.ResumeLayout(false);
 
         }

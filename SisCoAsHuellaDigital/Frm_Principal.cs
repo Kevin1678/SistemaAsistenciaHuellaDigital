@@ -30,27 +30,12 @@ namespace MicroSisPlani
         {
             ConfigurarListview();
             ConfiguraListview_Asis();
-            Verficar_Robot_de_Faltas();
             CargarHorarios();
             ConfigurarListviewUser();
            
         }
 
-        private void Verficar_Robot_de_Faltas()
-        {
-            string tipo;
-            tipo = RN_Utilitario.RN_Listar_TipoFalta(5);
-            if (tipo.Trim() == "Si")
-            {
-                timerFalta.Start();
-                rdb_ActivarRobot.Checked = true;
-            }
-            else if (tipo.Trim() == "No")
-            {
-                timerFalta.Stop();
-                rdb_Desact_Robot.Checked = true;
-            }
-        }
+
 
 
 
@@ -165,15 +150,7 @@ namespace MicroSisPlani
 
         }
 
-        private void btn_nuevoAsis_Click(object sender, EventArgs e)
-        {
-            Frm_Filtro fil = new Frm_Filtro();
-            Frm_Marcar_Asis_Manual asis = new Frm_Marcar_Asis_Manual();
 
-            fil.Show();
-            asis.ShowDialog();
-            fil.Hide();
-        }
 
         private void bt_Explo_Asis_Click(object sender, EventArgs e)
         {
@@ -555,38 +532,6 @@ namespace MicroSisPlani
             }
         }
 
-        private void btn_Savedrobot_Click(object sender, EventArgs e)
-        {
-            RN_Utilitario uti = new RN_Utilitario();
-            if (rdb_ActivarRobot.Checked==true)
-            {
-                uti.RN_Actulizar_RobotFalta(5, "Si");
-                if(BD_Utilitario.falta==true)
-                {
-                    Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
-                    ok.Lbl_msm1.Text = "El Robot fue Actulizado";
-                    ok.ShowDialog();
-
-                    elTab1.SelectedTabPageIndex = 0;
-                    elTabPage4.Visible = false;
-                }
-            }
-            else if(rdb_Desact_Robot.Checked==true)
-            {
-                uti.RN_Actulizar_RobotFalta(5, "No");
-
-                if (BD_Utilitario.falta == true)
-                {
-                    Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
-                    ok.Lbl_msm1.Text = "El Robot fue Actulizado";
-                    ok.ShowDialog();
-
-                    elTab1.SelectedTabPageIndex = 0;
-                    elTabPage4.Visible = false;
-                }
-
-            }
-        }
 
         private void btn_Asis_With_Huella_Click(object sender, EventArgs e)
         {
@@ -1019,15 +964,7 @@ namespace MicroSisPlani
             }
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Frm_Filtro fil = new Frm_Filtro();
-            Frm_Marcar_Asis_Manual asis = new Frm_Marcar_Asis_Manual();
 
-            fil.Show();
-            asis.ShowDialog();
-            fil.Hide();
-        }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {

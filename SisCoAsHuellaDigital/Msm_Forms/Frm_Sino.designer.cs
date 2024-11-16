@@ -29,16 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Sino));
             this.lbl_Nomalgo = new System.Windows.Forms.Label();
             this.Lbl_msm1 = new System.Windows.Forms.Label();
             this.BunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btn_si = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btn_no = new Klik.Windows.Forms.v1.EntryLib.ELButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btn_si)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_no)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Nomalgo
@@ -57,12 +54,12 @@
             // 
             this.Lbl_msm1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_msm1.ForeColor = System.Drawing.Color.DimGray;
-            this.Lbl_msm1.Location = new System.Drawing.Point(130, 104);
+            this.Lbl_msm1.Location = new System.Drawing.Point(75, 92);
             this.Lbl_msm1.Name = "Lbl_msm1";
             this.Lbl_msm1.Size = new System.Drawing.Size(379, 147);
             this.Lbl_msm1.TabIndex = 24;
-            this.Lbl_msm1.Text = "¿Quieres Quitarlo del Carrito?";
             this.Lbl_msm1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Lbl_msm1.Click += new System.EventHandler(this.Lbl_msm1_Click);
             // 
             // BunifuElipse1
             // 
@@ -133,22 +130,11 @@
             this.btn_no.VisualStyle = Klik.Windows.Forms.v1.EntryLib.ButtonVisualStyles.Custom;
             this.btn_no.Click += new System.EventHandler(this.btn_no_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 104);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
             // Frm_Sino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 347);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_si);
             this.Controls.Add(this.btn_no);
             this.Controls.Add(this.Lbl_msm1);
@@ -160,7 +146,6 @@
             this.Load += new System.EventHandler(this.Frm_Sino_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_si)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_no)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,6 +158,5 @@
         internal Bunifu.Framework.UI.BunifuElipse BunifuElipse1;
         internal Klik.Windows.Forms.v1.EntryLib.ELButton btn_si;
         internal Klik.Windows.Forms.v1.EntryLib.ELButton btn_no;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

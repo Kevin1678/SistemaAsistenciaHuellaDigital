@@ -79,7 +79,6 @@
             this.tmr_Conta = new System.Windows.Forms.Timer(this.components);
             this.lbl_waiting = new System.Windows.Forms.Label();
             this.pnl_Msm = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnl_titulo.SuspendLayout();
             this.GroupBox2.SuspendLayout();
@@ -432,7 +431,7 @@
             // 
             // picSocio
             // 
-            this.picSocio.Image = ((System.Drawing.Image)(resources.GetObject("picSocio.Image")));
+            this.picSocio.Image = global::MicroSisPlani.Properties.Resources.icons8_usuario_100;
             this.picSocio.Location = new System.Drawing.Point(483, 355);
             this.picSocio.Name = "picSocio";
             this.picSocio.Size = new System.Drawing.Size(176, 166);
@@ -584,16 +583,6 @@
             this.pnl_Msm.TabIndex = 129;
             this.pnl_Msm.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(521, 566);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 130;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 20;
@@ -605,7 +594,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1180, 601);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnl_Msm);
             this.Controls.Add(this.Lbl_HoraEntrada);
             this.Controls.Add(this.lbl_hora);
@@ -691,7 +679,6 @@
         internal System.Windows.Forms.Label labelTotalPago;
         internal System.Windows.Forms.Label labelpagoHora;
         internal System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

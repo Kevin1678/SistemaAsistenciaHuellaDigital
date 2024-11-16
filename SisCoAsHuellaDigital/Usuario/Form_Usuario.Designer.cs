@@ -82,7 +82,7 @@
             // 
             // Pic_User
             // 
-            this.Pic_User.Image = global::MicroSisPlani.Properties.Resources.usuario;
+            this.Pic_User.Image = global::MicroSisPlani.Properties.Resources.Usuario_removebg_preview;
             this.Pic_User.Location = new System.Drawing.Point(340, 184);
             this.Pic_User.Name = "Pic_User";
             this.Pic_User.Size = new System.Drawing.Size(167, 169);
@@ -97,7 +97,7 @@
             this.btn_Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Salir.ForeColor = System.Drawing.Color.White;
             this.btn_Salir.Image = ((System.Drawing.Image)(resources.GetObject("btn_Salir.Image")));
-            this.btn_Salir.Location = new System.Drawing.Point(569, 9);
+            this.btn_Salir.Location = new System.Drawing.Point(548, 9);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(32, 32);
             this.btn_Salir.TabIndex = 1;
@@ -178,7 +178,7 @@
             this.pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_titulo.Location = new System.Drawing.Point(0, 0);
             this.pnl_titulo.Name = "pnl_titulo";
-            this.pnl_titulo.Size = new System.Drawing.Size(613, 50);
+            this.pnl_titulo.Size = new System.Drawing.Size(587, 50);
             this.pnl_titulo.TabIndex = 57;
             // 
             // label7
@@ -195,11 +195,11 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.BackColor = System.Drawing.Color.Red;
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Location = new System.Drawing.Point(0, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(613, 2);
+            this.label1.Size = new System.Drawing.Size(587, 2);
             this.label1.TabIndex = 0;
             // 
             // label8
@@ -343,7 +343,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(613, 557);
+            this.ClientSize = new System.Drawing.Size(587, 506);
             this.Controls.Add(this.txt_IdUsuario);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
